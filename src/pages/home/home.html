@@ -1,14 +1,12 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+<ion-content scroll="false" class="contentHome">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-intro">
+      Bem vindo ao app da Nubank
+    </div>
+  </div>
+  <div padding>
+    <button ion-button block (click)="signup()" class="signup">SIGNUP</button>
+    <button ion-button block (click)="login()" class="login">LOGIN</button>
+  </div>
 </ion-content>
