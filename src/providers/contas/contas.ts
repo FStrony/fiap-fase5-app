@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Conta } from '../../models/conta';
+import { CarteiraInvestimento } from '../../models/carteiraInvestimentos';
+import { Investimento } from '../../models/investimento';
 
 /*
   Generated class for the ContasProvider provider.
@@ -8,27 +11,26 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ContasProvider {
-
-  contas = [{
-    nome: 'fiap',
-    email: 'fiap@fiap.com.br',
-    senha: 'fiap',
-    saldo: 1000000,
-    investimentos: [{}]
-   }];
+  
+  contas : Array<Conta> = [new Conta(1, 'FIAP', 'fiap@fiap.com.br','1234', 1000000)];
 
   constructor() { }
 
    insert(conta){
+     conta.id = this.contas.length + 1;
      this.contas.push(conta);
-   }
-   
-   update(investimento, index){
-     this.contas[index].investimentos.push(investimento);
    }
 
    login(conta){
-     const index = this.contas.findIndex(element => element.email == conta.email && element.senha == conta.senha)
-     return index;
+     const contaUsuario  = this.contas.find(element => element.email == conta.email && element.senha == conta.senha)
+     return contaUsuario;
    }
+
+   getContaByIndex(index){
+     return this.contas[index];
+   }
+
+   getContaById(id){
+    return this.contas.find(element => element.id == id);
+  }
 }

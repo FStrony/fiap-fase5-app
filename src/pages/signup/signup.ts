@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { ContasProvider } from '../../providers/contas/contas';
 import { HomePage } from '../home/home';
+import { Conta } from '../../models/conta';
 
 /**
  * Generated class for the SignupPage page.
@@ -15,20 +16,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-
-  account: {
-    nome: string,
-    email: string,
-    senha: string,
-    saldo: number,
-    investimentos: [{}]
-  } = {
-    nome: "",
-    email: "",
-    senha: "",
-    saldo: 1000000,
-    investimentos: [{}]
-  };
+  account: Conta = new Conta(null, null,null, null,1000000);
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public contas: ContasProvider, public toastCtrl: ToastController) {
   }

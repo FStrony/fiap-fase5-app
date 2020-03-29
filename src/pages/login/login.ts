@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { ContasProvider } from '../../providers/contas/contas';
 import { HomePage } from '../home/home';
+import { DashboardPage } from '../dashboard/dashboard';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,16 +19,16 @@ export class LoginPage {
 
   account: { email: string, senha: string } = {
     email: 'fiap@fiap.com.br',
-    senha: 'fiap'
+    senha: '1234'
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public contas: ContasProvider, public toastCtrl: ToastController) {
   }
 
   doLogin() {
-    const contaIndex = this.contas.login(this.account);
-    if(contaIndex >= 0){
-      this.navCtrl.push(HomePage);
+    const conta = this.contas.login(this.account);
+    if(conta){
+      this.navCtrl.push(DashboardPage, { id: conta.id });
 
       let toast = this.toastCtrl.create({
         message: "Login realizado com sucesso!",

@@ -9,13 +9,16 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ContasProvider } from '../providers/contas/contas';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { InvestimentosProvider } from '../providers/investimentos/investimentos';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    DashboardPage
   ],
   imports: [
     BrowserModule,
@@ -26,13 +29,15 @@ import { ContasProvider } from '../providers/contas/contas';
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    DashboardPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ContasProvider
+    ContasProvider,
+    InvestimentosProvider
   ]
 })
 export class AppModule {}
