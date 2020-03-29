@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -23,7 +22,13 @@ export class ContasProvider {
    insert(conta){
      this.contas.push(conta);
    }
+   
    update(investimento, index){
      this.contas[index].investimentos.push(investimento);
+   }
+
+   login(conta){
+     const index = this.contas.findIndex(element => element.email == conta.email && element.senha == conta.senha)
+     return index;
    }
 }
