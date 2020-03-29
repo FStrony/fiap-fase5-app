@@ -14,6 +14,8 @@ import { InvestimentosProvider } from '../providers/investimentos/investimentos'
 import { InvestimentosPage } from '../pages/investimentos/investimentos';
 import { InvestimentoDetailPage } from '../pages/investimento-detail/investimento-detail';
 import { CarteiraProvider } from '../providers/carteira/carteira';
+import { CarteiraPage } from '../pages/carteira/carteira';
+import { CarteiraDetailPage } from '../pages/carteira-detail/carteira-detail';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CarteiraProvider } from '../providers/carteira/carteira';
     SignupPage,
     DashboardPage,
     InvestimentosPage,
-    InvestimentoDetailPage
+    InvestimentoDetailPage,
+    CarteiraPage,
+    CarteiraDetailPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import { CarteiraProvider } from '../providers/carteira/carteira';
     SignupPage,
     DashboardPage,
     InvestimentosPage,
-    InvestimentoDetailPage
+    InvestimentoDetailPage,
+    CarteiraPage, 
+    CarteiraDetailPage
   ],
   providers: [
     StatusBar,
