@@ -1,13 +1,16 @@
 import { Investimento } from "./investimento";
+import { Conta } from "./conta";
 
 export class CarteiraInvestimento{
-  constructor(valorInvestido: number,investimento: Investimento){
+  constructor(valorInvestido: number, conta: Conta,investimento: Investimento){
     this.valorInvestido = valorInvestido;
-    this.Investimento = investimento;
+    this.contaId = conta.id;
+    this.investimentoId = investimento.id;
   }
 }
 
 export interface CarteiraInvestimento {
+  contaId: number,
   valorInvestido: number,
-  Investimento: Investimento
+  investimentoId: number
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ContasProvider } from '../../providers/contas/contas';
 import { Conta } from '../../models/conta';
+import { InvestimentosPage } from '../investimentos/investimentos';
 
 /**
  * Generated class for the DashboardPage page.
@@ -33,6 +34,6 @@ export class DashboardPage {
   }
 
   investir() {
-    //this.navCtrl.push(SignupPage);
+    this.navCtrl.push(InvestimentosPage, {id: this.account.id});
   }
 }

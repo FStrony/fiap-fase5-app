@@ -16,7 +16,7 @@ export class ContasProvider {
 
   constructor() { }
 
-   insert(conta){
+   insert(conta: Conta){
      conta.id = this.contas.length + 1;
      this.contas.push(conta);
    }
@@ -26,11 +26,18 @@ export class ContasProvider {
      return contaUsuario;
    }
 
-   getContaByIndex(index){
+  debitarById(id: number, valor: number){
+    let index: number = this.contas.findIndex(conta => conta.id == id);
+    if (index >= 0){
+      this.contas[index].saldo = this.contas[index].saldo - valor;
+    }
+  }
+
+   getContaByIndex(index: number){
      return this.contas[index];
    }
 
-   getContaById(id){
+   getContaById(id: number){
     return this.contas.find(element => element.id == id);
   }
 }

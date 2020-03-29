@@ -1,0 +1,40 @@
+<!--
+  Generated template for the InvestimentoDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Investimento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="item-detail">
+    <h3>Saldo em conta: R$ {{account.saldo}}</h3>
+    <br>
+    <p>
+      Informações do investimento:<br>
+      <b>{{investimento.nome}}</b><br>
+      <b>Emissor: </b> {{investimento.emissor}}<br>
+      <b>IR: </b> {{investimento.ir}}<br>
+      <b>Resgate: </b> {{investimento.resgate}}<br>
+      <b>Taxa: </b> {{investimento.taxa}}<br>
+    </p>
+    <br><br><br>
+    <form (submit)="investir()" class='formInvestir'>
+      <ion-list>
+        <ion-item no-padding>
+          <ion-label fixed>Investir R$</ion-label>
+          <ion-input type="number" [(ngModel)]="valor" name="valor"></ion-input>
+        </ion-item>
+
+        <div>
+          <button ion-button color="primary" block>Investir</button>
+        </div>
+      </ion-list>
+    </form>
+</div>
+</ion-content>

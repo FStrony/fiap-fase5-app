@@ -12,7 +12,7 @@ export class InvestimentosProvider {
 
   investimentos : Array<Investimento> = [
       new Investimento(1, "CBD POS DI LIQUIDEZ DIARIA", "Banco Inter", "Regressivo", "Imediato", "100% do CDI"),
-      new Investimento(2, "CBD AGIBANK - PRAZO FECAHDO", "Banco AGIBANK", "Regressivo", "25/09/2020", "119% do CDI"),
+      new Investimento(2, "CBD AGIBANK - PRAZO FECHADO", "Banco AGIBANK", "Regressivo", "25/09/2020", "119% do CDI"),
       new Investimento(3, "CBD BMG - PRAZO FECHADO", "Banco BMG", "Regressivo", "25/09/2020", "108% do CDI"),
       new Investimento(4, "CBD BS2 - PRAZO FECHADO", "Banco BS2", "Regressivo", "26/06/2020", "105% do CDI"),
       new Investimento(5, "CBD BTG - PRAZO FECHADO", "Banco BS2", "Regressivo", "06/05/2021", "102,5% do CDI"),
@@ -26,7 +26,7 @@ export class InvestimentosProvider {
 
   constructor() { }
 
-  getContaById(id){
+  getById(id: number){
     return this.investimentos.find(element => element.id == id);
   }
 

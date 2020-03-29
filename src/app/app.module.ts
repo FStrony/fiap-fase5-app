@@ -11,6 +11,9 @@ import { SignupPage } from '../pages/signup/signup';
 import { ContasProvider } from '../providers/contas/contas';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { InvestimentosProvider } from '../providers/investimentos/investimentos';
+import { InvestimentosPage } from '../pages/investimentos/investimentos';
+import { InvestimentoDetailPage } from '../pages/investimento-detail/investimento-detail';
+import { CarteiraProvider } from '../providers/carteira/carteira';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { InvestimentosProvider } from '../providers/investimentos/investimentos'
     HomePage,
     LoginPage,
     SignupPage,
-    DashboardPage
+    DashboardPage,
+    InvestimentosPage,
+    InvestimentoDetailPage
   ],
   imports: [
     BrowserModule,
@@ -30,14 +35,17 @@ import { InvestimentosProvider } from '../providers/investimentos/investimentos'
     HomePage,
     LoginPage,
     SignupPage,
-    DashboardPage
+    DashboardPage,
+    InvestimentosPage,
+    InvestimentoDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ContasProvider,
-    InvestimentosProvider
+    InvestimentosProvider,
+    CarteiraProvider
   ]
 })
 export class AppModule {}
