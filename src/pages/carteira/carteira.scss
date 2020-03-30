@@ -1,3 +1,19 @@
 page-carteira {
+    .content {
+        background: #9b50b9;
+    }
 
+    .item {
+        background: #9b50b900;
+    }
+
+    ion-label {
+        background: white;
+        border-radius: 5px;
+    }
+
+    ion-label .label, ion-label .label p {
+        color: rgb(74, 192, 228);
+    }
+    
 }
