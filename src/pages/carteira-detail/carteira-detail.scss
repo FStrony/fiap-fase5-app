@@ -1,8 +1,31 @@
 page-carteira-detail {
+  .content {
+    background: #9b50b9;
+  }
+
   .item-detail {
-    width: 100%;
+    width: 98%;
     background: white;
     position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .item-detail {
+      width: 90%;
+      background: white;
+      position: absolute;
+      padding: 5px;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
+
+  .item-detail h3 {
+    color: rgb(176, 221, 92);
+    padding-top: 8px;
   }
 
 }
