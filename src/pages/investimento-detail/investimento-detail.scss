@@ -1,11 +1,48 @@
 page-investimento-detail {
+  .content {
+    background: #9b50b9;
+  }
+
   .item-detail {
-    width: 100%;
+    width: 98%;
     background: white;
     position: absolute;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .item-detail {
+      width: 90%;
+      background: white;
+      position: absolute;
+      border-radius: 5px;
+      padding: 5px;
+      text-align: center;
+    }
   }
 
   .formInvestir{
-    width: 90%;
+    width: 100%;
+  }
+
+  .button {
+    background: white;
+    color: #9b50b9;
+    border: #9b50b9 solid 1px;
+    border-radius: 5px;
+  }
+
+  .button:hover, .button:active, .button:focus, .button.active {
+    background-color: #9b50b9;
+    color: white;
+    border: #9b50b9 solid 1px;
+    border-radius: 5px;
+  }
+
+  .item-detail h3 {
+    color: rgb(176, 221, 92);
+    padding-top: 8px;
   }
 }
