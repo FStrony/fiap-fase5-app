@@ -16,7 +16,7 @@ import { Conta } from '../../models/conta';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  account: Conta = new Conta(null, null,null, null,1000000);
+  account: Conta = new Conta(null, null,null, null,10000);
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public contas: ContasProvider, public toastCtrl: ToastController) {
   }

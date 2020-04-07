@@ -44,7 +44,7 @@ export class CarteiraPage {
     return (this.investimentoProvider.getById(id)).nome;
   }
 
-  openItem(valorInvestido: number,idInvestimento: number) {
-    this.navCtrl.push(CarteiraDetailPage, {valorInvestido: valorInvestido, idInvestimento: idInvestimento});
+  openItem(valorInvestido: number,idInvestimento: number, contaId: number) {
+    this.navCtrl.push(CarteiraDetailPage, {valorInvestido: valorInvestido, idInvestimento: idInvestimento, contaId: contaId});
   }
 }

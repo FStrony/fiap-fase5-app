@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CarteiraInvestimento } from '../../models/carteiraInvestimentos';
 import { ContasProvider } from '../contas/contas';
 import { InvestimentosProvider } from '../investimentos/investimentos';
+import { ThrowStmt } from '@angular/compiler';
 
 /*
   Generated class for the CarteiraProvider provider.
@@ -23,6 +24,14 @@ export class CarteiraProvider {
 
   insert(carteira: CarteiraInvestimento){
     this.investimentos.push(carteira);
+  }
+
+  withdraw(valor: number, contaId: number, investimentoId: number){
+    let index: number = this.investimentos.findIndex(e => e.valorInvestido == valor && e.contaId == contaId && e.investimentoId == investimentoId);
+    if (index >= 0){
+      this.investimentos.splice(index, 1);
+      this.contas.depositarById(contaId, valor);
+    }
   }
 
   getByContaId(id: number){
