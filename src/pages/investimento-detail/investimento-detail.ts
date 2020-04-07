@@ -40,17 +40,26 @@ export class InvestimentoDetailPage {
 
   investir(){
     if(this.valor > 0){
-      let carteira: CarteiraInvestimento = new CarteiraInvestimento(this.valor, this.account, this.investimento);
-      this.carteiraProvider.insert(carteira);
-      this.contaProvider.debitarById(this.account.id, this.valor);
-      this.navCtrl.push(DashboardPage, { id: this.account.id });
+      if(this.account.saldo >= this.valor){
+        let carteira: CarteiraInvestimento = new CarteiraInvestimento(this.valor, this.account, this.investimento);
+        this.carteiraProvider.insert(carteira);
+        this.contaProvider.debitarById(this.account.id, this.valor);
+        this.navCtrl.push(DashboardPage, { id: this.account.id });
 
-      let toast = this.toastCtrl.create({
-        message: "Investimento realizado com sucesso!",
-        duration: 3000,
-        position: 'top'
-      });
-      toast.present();
+        let toast = this.toastCtrl.create({
+          message: "Investimento realizado com sucesso!",
+          duration: 3000,
+          position: 'top'
+        });  
+        toast.present();      
+      } else{
+        let toast = this.toastCtrl.create({
+          message: "Saldo insuficiente!",
+          duration: 3000,
+          position: 'top'
+        });  
+        toast.present();     
+      }      
     }else{
       let toast = this.toastCtrl.create({
         message: "Não foi possível realizar o investimento. Verifique os dados e tente novamente.",
