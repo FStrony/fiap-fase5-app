@@ -1,7 +1,9 @@
 # fiap-fase5-app
 FIAP - MBA em Engenharia de Software - Atividade Fase 5 App Híbrido com Ionic 
 
-App Híbrido com Ionic com o layout inicial da sua funcionalidade
+App Híbrido com Ionic com o layout inicial da funcionalidade
+
+Microsserviço: https://github.com/MinK-Kang/FIAP.Investment
 
 Grupo:<br>
 Carlos Eduardo Ribeiro Maistro - RM 334631<br>
